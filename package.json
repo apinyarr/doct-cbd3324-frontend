@@ -1,0 +1,23 @@
+{
+  "name": "doct-cbd3324-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for dictionary application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"please add test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apinyarr/doct-cbd3324-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apinyarr/doct-cbd3324-frontend/issues"
+  },
+  "homepage": "https://github.com/apinyarr/doct-cbd3324-frontend#readme",
+  "dependencies": {
+    "dependencies": "0.0.1",
+    "express": "^4.18.2"
+  }
+}
