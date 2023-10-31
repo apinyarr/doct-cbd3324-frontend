@@ -32,3 +32,12 @@ doct-cbd3324-frontend/
 
 ## Run the application
 ```node app/server.js```
+
+## Build and Run Docker Container
+To build an image, use the command
+
+```docker build -t apinyarr/dic-frontend:test .```
+
+To run a container, use the command
+
+```docker run -d --rm --name doc-frontend -p 8080:8080 -e BACKEND_URL=http://host.docker.internal:8088/search apinyarr/dic-frontend:test```
