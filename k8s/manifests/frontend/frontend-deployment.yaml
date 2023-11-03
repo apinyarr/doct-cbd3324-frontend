@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dic-frontend-deployment
+  namespace: dictionary-namespace
+  labels:
+    app: dic-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dic-frontend
+  template:
+    metadata:
+      labels:
+        app: dic-frontend
+    spec:
+      containers:
+      - name: dic-frontend
+        image: apinyarr/dic-frontend:v1.0
+        env:
+        - name: BACKEND_URL
+          valueFrom:
+            configMapKeyRef:
+              name: dic-config
+              key: backend_url
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        livenessProbe:
+          failureThreshold: 3
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          successThreshold: 2
+          timeoutSeconds: 4
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 254Mi
