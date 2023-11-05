@@ -6,6 +6,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 8080}]'
   labels:
     app: frontend-ingress
 spec:
@@ -14,7 +15,7 @@ spec:
     - http:
         paths:
           - path: /
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
                 name: dic-frontend-service
