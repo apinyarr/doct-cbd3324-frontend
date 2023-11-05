@@ -12,3 +12,5 @@ spec:
       targetPort: 8080
       nodePort: 30080
   type: NodePort
+  # Type LoadBalancer is for EKS. It need to comment 'nodePort: 30080' and 'type: NodePort'
+  # type: LoadBalancer
