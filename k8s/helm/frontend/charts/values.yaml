@@ -1,5 +1,5 @@
 ---
-namespace: dictionary-namespace
+namespace: dictionary-prd-namespace
 
 frontend:
   image: apinyarr/dic-frontend
