@@ -10,7 +10,7 @@ services:
       - 8080
     restart: always
     environment:
-      - BACKEND_URL=http://host.docker.internal:8088/search
+      - BACKEND_URL=http://dic_backend:8088/search
   nginx:
     image: nginx:1.25.3-alpine3.18
     volumes:
