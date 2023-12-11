@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30080
-  type: NodePort
+  #     nodePort: 30080
+  # type: NodePort
   # Type LoadBalancer is for EKS testing. It need to comment 'nodePort: 30080' and 'type: NodePort' while testing.
-  # type: LoadBalancer
+  type: LoadBalancer
