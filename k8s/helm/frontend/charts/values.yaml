@@ -1,0 +1,9 @@
+---
+namespace: dictionary-namespace
+
+frontend:
+  image: apinyarr/dic-frontend
+  tag: v1.0
+  service:
+    type: LoadBalancer
+  backend: "backend-service"
